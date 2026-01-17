@@ -51,7 +51,7 @@ const getCurrentWeekStart = () => {
   return format(monday, 'yyyy-MM-dd');
 };
 
-// Seed data to match the screenshot
+// Seed data
 const getSeedData = (): { projects: Project[]; tasks: Task[] } => {
   const weekStart = getCurrentWeekStart();
   const monday = new Date(weekStart);
@@ -59,14 +59,14 @@ const getSeedData = (): { projects: Project[]; tasks: Task[] } => {
   const projects: Project[] = [
     {
       id: 'project-1',
-      name: 'DIY Renovation',
+      name: 'Breathwork',
       color: '#3b82f6', // blue
       status: 'active',
       createdAt: Date.now(),
     },
     {
       id: 'project-2',
-      name: 'Garden Project',
+      name: 'Lunch',
       color: '#22c55e', // green
       status: 'active',
       createdAt: Date.now(),
@@ -77,52 +77,18 @@ const getSeedData = (): { projects: Project[]; tasks: Task[] } => {
     {
       id: 'task-1',
       projectId: 'project-1',
-      date: format(monday, 'yyyy-MM-dd'),
-      title: 'Buy wall paint',
-      completed: true,
+      date: format(monday, 'yyyy-MM-dd'), // Monday
+      title: 'Ring studio',
+      completed: false,
       createdAt: Date.now(),
-      completedAt: Date.now(),
     },
     {
       id: 'task-2',
-      projectId: 'project-1',
-      date: format(monday, 'yyyy-MM-dd'),
-      title: 'Prep living room',
-      completed: false,
-      createdAt: Date.now(),
-    },
-    {
-      id: 'task-3',
-      projectId: 'project-1',
-      date: format(addDays(monday, 1), 'yyyy-MM-dd'),
-      title: 'First coat of paint',
-      completed: false,
-      createdAt: Date.now(),
-    },
-    {
-      id: 'task-4',
-      projectId: 'project-1',
-      date: format(addDays(monday, 5), 'yyyy-MM-dd'),
-      title: 'Install shelving',
-      completed: false,
-      createdAt: Date.now(),
-    },
-    {
-      id: 'task-5',
       projectId: 'project-2',
-      date: format(addDays(monday, 2), 'yyyy-MM-dd'),
-      title: 'Plant bulbs',
+      date: format(addDays(monday, 4), 'yyyy-MM-dd'), // Friday
+      title: 'Buy tofu',
       completed: false,
       createdAt: Date.now(),
-    },
-    {
-      id: 'task-6',
-      projectId: 'project-2',
-      date: format(addDays(monday, 6), 'yyyy-MM-dd'),
-      title: 'Prune roses',
-      completed: true,
-      createdAt: Date.now(),
-      completedAt: Date.now(),
     },
   ];
 
